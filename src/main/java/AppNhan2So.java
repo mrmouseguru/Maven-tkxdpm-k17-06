@@ -6,8 +6,8 @@ public class AppNhan2So {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		OutputInterface out = null;
-		InputInterface in = null;
+		OutputBoundary out = null;
+		InputBoundary in = null;
 		Scanner sc = new Scanner(System.in);
 		PrintWriter pwt = new PrintWriter(System.out);
 		

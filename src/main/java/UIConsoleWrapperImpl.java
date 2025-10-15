@@ -2,7 +2,7 @@
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class UIConsoleWrapperImpl implements InputInterface {
+public class UIConsoleWrapperImpl implements InputBoundary {
 	private Scanner in;
 	private PrintWriter out;
 	

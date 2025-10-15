@@ -1,9 +1,9 @@
 import javax.swing.JOptionPane;
 
-public class GUIResultImpl implements OutputInterface {
+public class GUIResultImpl implements OutputBoundary {
 
 	@Override
-	public void show(OutputData outData) {
+	public void present(OutputData outData) {
 		// TODO Auto-generated method stub
 		JOptionPane.showMessageDialog(null, 
 				outData.result);

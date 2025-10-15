@@ -1,7 +1,7 @@
 
 import java.io.PrintWriter;
 
-public class UIConsoleResultImpl implements OutputInterface{
+public class UIConsoleResultImpl implements OutputBoundary{
 	private PrintWriter pwt;
 	
 	
@@ -13,7 +13,7 @@ public class UIConsoleResultImpl implements OutputInterface{
 
 
 	@Override
-	public void show(OutputData outData) {
+	public void present(OutputData outData) {
 		// TODO Auto-generated method stub
 		pwt.println("Result: " + outData.result);
 		pwt.flush();

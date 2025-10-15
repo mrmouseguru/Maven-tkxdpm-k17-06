@@ -1,6 +1,6 @@
 import javax.swing.JOptionPane;
 
-public class GUIImpl implements InputInterface {
+public class GUIImpl implements InputBoundary {
 
 	@Override
 	public InputData getNumber() {
