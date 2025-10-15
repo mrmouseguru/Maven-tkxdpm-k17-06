@@ -1,3 +1,4 @@
+package nhan2so;
 
 
 public interface InputBoundary {

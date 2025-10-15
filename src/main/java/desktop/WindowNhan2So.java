@@ -1,3 +1,4 @@
+package desktop;
 
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -8,6 +9,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import nhan2so.InputBoundary;
+import nhan2so.Nhan2So;
+import nhan2so.Nhan2SoControl;
+import nhan2so.OutputBoundary;
+import presenters.Nhan2SoPresenter;
+import presenters.Nhan2SoViewModel;
 
 public class WindowNhan2So extends JFrame {
 
@@ -52,8 +60,28 @@ public class WindowNhan2So extends JFrame {
 					public void actionPerformed(ActionEvent e) {
 						//click vào nút thì làm//
 						//sinh viên code vào đây
-						JOptionPane.
-						showMessageDialog(null, "Hello ...");
+						Nhan2So entity = new Nhan2So();
+						InputBoundary in = null;
+						OutputBoundary out = null;
+						Nhan2SoViewModel model = new 
+								Nhan2SoViewModel();
+						
+						ResultDialogView view = new ResultDialogView();
+						view.setModel(model);//đăng ký
+						
+						InputDTO inDTO = null;
+						
+						out = new Nhan2SoPresenter(model);
+						in = new Nhan2SoControl(out, entity);
+						Nhan2SoController controller =
+								new Nhan2SoController(in);
+						inDTO = new InputDTO();
+						inDTO.num1 = tf1.getText();
+						inDTO.num2 = tf2.getText();
+						
+						controller.execute(inDTO);
+						model.notifySubscribers();
+						
 						
 					}
 				}
