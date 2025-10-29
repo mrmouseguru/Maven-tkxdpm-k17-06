@@ -1,4 +1,4 @@
-package nhan2so;
+package tinh2so.nhan2so;
 
 
 public interface OutputBoundary {
