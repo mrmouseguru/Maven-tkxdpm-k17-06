@@ -1,6 +1,5 @@
 package tinh2so;
 
-import tinh2so.nhan2so.OutputBoundary;
 
 public abstract class Tinh2SoControl {
 	protected OutputBoundaryTinh2So out;
@@ -24,7 +23,18 @@ public abstract class Tinh2SoControl {
 	public void control(RequestData2So req) {
 		res.currentDay =  Tinh2So.getCurrentDay();
 		execute(req);
+		
+		prestent();
+		
 	}
+	
+	private void prestent() {
+		if(out != null) {
+			out.present(res);
+		}
+	}
+	
+	
 
 
 }
