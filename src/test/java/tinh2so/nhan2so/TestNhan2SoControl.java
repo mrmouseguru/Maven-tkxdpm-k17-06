@@ -2,6 +2,8 @@ package tinh2so.nhan2so;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Date;
+
 import org.junit.jupiter.api.Test;
 
 import tinh2so.RequestData2So;
@@ -18,6 +20,9 @@ public class TestNhan2SoControl {
 		nhan2so.control(req);
 		
 		assertEquals("INVALID_INPUT", nhan2so.getRes().message);
+		assertEquals(new Date().getDay(), 
+				nhan2so.getRes().currentDay.getDay());
+		
 		
 	}
 

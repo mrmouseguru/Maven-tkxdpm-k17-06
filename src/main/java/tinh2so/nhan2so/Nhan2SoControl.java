@@ -1,11 +1,12 @@
 package tinh2so.nhan2so;
 
+import tinh2so.OutputBoundaryTinh2So;
 import tinh2so.RequestData2So;
 import tinh2so.Tinh2SoControl;
 
 public class Nhan2SoControl extends Tinh2SoControl{
 	
-	protected Nhan2SoControl(OutputBoundary out) {
+	protected Nhan2SoControl(OutputBoundaryTinh2So out) {
 		super(out);
 		
 	}
