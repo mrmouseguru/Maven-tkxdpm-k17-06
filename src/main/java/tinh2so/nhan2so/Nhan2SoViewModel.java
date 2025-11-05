@@ -6,5 +6,7 @@ public class Nhan2SoViewModel {
 
 	public String message;
 	public String currentDay;//dd/MM/yyyy
+	public String result;
+	public String color;
 
 }

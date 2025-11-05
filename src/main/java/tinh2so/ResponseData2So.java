@@ -6,5 +6,6 @@ public class ResponseData2So {
 
 	public String message;
 	public Date currentDay;
+	public int result;
 
 }

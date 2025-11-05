@@ -20,6 +20,14 @@ public class Nhan2So extends Tinh2So {
 		}
 	}
 	
+	public boolean checkEven(int result) {
+		if(result %2 == 0) {
+			return true;
+		}
+		
+		return false;
+	}
+	
 	
 	
 

@@ -17,14 +17,20 @@ public class Nhan2soPresenter implements OutputBoundaryTinh2So{
 
 	@Override
 	public void present(ResponseData2So res) {
-		if(res.message != null) {
-			model.message = res.message;
+		ResponseDataNhan2So resNhan = (ResponseDataNhan2So) res;
+		if(resNhan.message != null) {
+			model.message = resNhan.message;
+		}else {
+			model.result = String.valueOf(resNhan.result);
+			if(resNhan.isEven) {
+				model.color = "GREEN";
+			}else {
+				model.color = "RED";
+			}
 		}
 		
 		model.currentDay = converter(res.currentDay);
 	}
-
-
 
 	private String converter(Date currentDay) {
 		SimpleDateFormat converter = new SimpleDateFormat("dd/MM/yyyy");

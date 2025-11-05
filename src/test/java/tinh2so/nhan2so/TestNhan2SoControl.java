@@ -25,5 +25,21 @@ public class TestNhan2SoControl {
 		
 		
 	}
+	
+
+	@Test
+	public void testExecuteValidInput() {
+		RequestData2So req = new RequestData2So();
+		req.num1 = 1;
+		req.num2 = 9;
+		Tinh2SoControl nhan2so = new Nhan2SoControl(null);
+		nhan2so.control(req);
+		
+		assertEquals(null, nhan2so.getRes().message);
+		assertEquals(9, nhan2so.getRes().result);
+		assertEquals(false, ((ResponseDataNhan2So)nhan2so.getRes()).isEven);
+		
+		
+	}
 
 }

@@ -14,7 +14,7 @@ public abstract class Tinh2SoControl {
 	
 	protected Tinh2SoControl(OutputBoundaryTinh2So out) {
 		this.out = out;
-		this.res = new ResponseData2So();
+		//this.res = new ResponseData2So();
 	}
 	
 	protected abstract void execute(RequestData2So req);

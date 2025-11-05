@@ -12,7 +12,7 @@ import tinh2so.ResponseData2So;
 public class TestNhan2SoPresenter {
 	
 	@Test
-	public void testPresent() {
+	public void testPresentInvalid() {
 		ResponseData2So res = new ResponseData2So();
 		res.message = "INVALID_INPUT";
 		res.currentDay = new Date();
@@ -22,6 +22,21 @@ public class TestNhan2SoPresenter {
 		
 		assertEquals("INVALID_INPUT", model.message); 
 		assertEquals("05/11/2025", model.currentDay);
+		;
+		
+	}
+	
+	@Test
+	public void testPresentValid() {
+		ResponseData2So res = new ResponseDataNhan2So();
+		res.currentDay = new Date();
+		res.result = 9;
+		Nhan2SoViewModel model = new Nhan2SoViewModel();
+		OutputBoundaryTinh2So n2so = new Nhan2soPresenter(model);
+		n2so.present(res);
+		
+		assertEquals("9", model.result); 
+		assertEquals("RED", model.color);
 		;
 		
 	}
