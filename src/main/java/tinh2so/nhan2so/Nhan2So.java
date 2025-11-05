@@ -14,6 +14,12 @@ public class Nhan2So extends Tinh2So {
 		return num1 * num2;
 	}
 	
+	public static void checkInput(int num) {
+		if(num < 0 || num >9) {
+			throw new IllegalArgumentException("INVALID_INPUT");
+		}
+	}
+	
 	
 	
 

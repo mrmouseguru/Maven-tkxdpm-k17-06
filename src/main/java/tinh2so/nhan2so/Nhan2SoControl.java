@@ -1,25 +1,29 @@
 package tinh2so.nhan2so;
 
+import tinh2so.RequestData2So;
+import tinh2so.Tinh2SoControl;
 
-public class Nhan2SoControl implements InputBoundary{
-	private OutputBoundary out;
-	private Nhan2So n2so;
+public class Nhan2SoControl extends Tinh2SoControl{
 	
-	
-	public Nhan2SoControl(OutputBoundary out, Nhan2So n2so) {
-		this.out = out;
-		this.n2so = n2so;
+	protected Nhan2SoControl(OutputBoundary out) {
+		super(out);
+		
 	}
+
 
 	@Override
-	public OutputData execute(InputData inData) {
-		int result = n2so.nhan2So(inData.num1, inData.num2);
-		OutputData outData = new OutputData();
-		outData.result = result;
-		out.present(outData);
-		return outData;//testing
-		//out.show(outData);
+	protected void execute(RequestData2So req) {
+		//validate input num1, num2
+		//nghiệp vụ phụ thuộc phần mềm
+		//sai khiến Entity
+		try {
+			Nhan2So.checkInput(req.num1);
+			Nhan2So.checkInput(req.num2);
+		}catch (IllegalArgumentException e) {
+			res.message = e.getMessage();//INVALID_INPUT
+		}
 	}
+
 	
 	
 }
